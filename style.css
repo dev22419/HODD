@@ -1,0 +1,64 @@
+body,
+html{
+  height: 100%;
+  text-align: center;
+  font-size: 40px;
+  font-family: Ubuntu, sans-serif;
+  
+}
+body:before,
+.btn {
+  display: inline-block;
+  vertical-align: middle;
+}
+body:before {
+  height: 100%;
+  content: '';
+}
+.btn,
+.btn:before,
+.btn:after {
+  cursor: pointer;
+  padding: 0.5em 2em;
+  display: inline-block;
+  background-color: rgba(127, 157, 181, 0.6);
+  color: #fff;
+  border-radius: 6px;
+  position: relative;
+  -webkit-transition: all 0.5s cubic-bezier(0.5, 0, 0.5, 1);
+  transition: all 0.5s cubic-bezier(0.5, 0, 0.5, 1);
+  box-shadow: 0 0 0 rgba(0,0,0,0);
+}
+
+.btn:before,
+.btn:after {
+  position: absolute;
+  content: attr(data-title);
+  z-index: -1;
+}
+
+.btn:before {
+  top: -0.1em;
+  right: -0.1em;
+  background-color: rgba(255, 0, 0, 0.5);
+}
+
+.btn:after {
+  bottom: -0.1em;
+  left: -0.1em;
+  background-color: rgba(0, 0, 255, 0.5);
+}
+
+.btn:hover {
+  background-color: rgba(127, 157, 181, 1);
+  box-shadow: 0.05em 0.05em 0.1em rgba(0,0,0,0.5); 
+}
+
+.btn:hover:before {
+  top: 0;
+  right: 0;
+}
+.btn:hover:after {
+  bottom: 0;
+  left: 0;
+}
